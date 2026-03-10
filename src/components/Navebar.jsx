@@ -1,0 +1,33 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+function Navebar() {
+  return (
+    <div>
+      
+      <nav className='shadow flex justify-between px-[50px] items-center'>
+        <div>
+            <img width={'80px'} src="/public/image.png" alt="" />
+        </div>
+
+        <div className='flex gap-[30px]'>
+            <Link to={'/'}>Home</Link>
+            <Link to={'/state_prop'}>Stat and prop</Link>
+            <Link>Service</Link>
+            <Link>Contact us</Link>
+        </div>
+
+        <div className='flex gap-[30px]'>
+            <button className='shadow px-[20px] py-[6px] rounded-[5px]'>LOGIN</button>
+            <button className='shadow px-[20px] py-[6px] rounded-[5px]' >REGISTER</button>
+        </div>
+
+
+
+      </nav>
+
+    </div>
+  )
+}
+
+export default Navebar
