@@ -18,7 +18,7 @@ function Navebar() {
         </div>
 
         <div className='flex gap-[30px]'>
-            <button className='shadow px-[20px] py-[6px] rounded-[5px]'>LOGIN</button>
+           <Link to={'/login'}> <button className='shadow px-[20px] py-[6px] rounded-[5px]'>LOGIN</button></Link>
             <button className='shadow px-[20px] py-[6px] rounded-[5px]' >REGISTER</button>
         </div>
 

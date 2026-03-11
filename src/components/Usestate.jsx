@@ -17,6 +17,8 @@ function Usestate() {
             setcount(0)
         }
     }
+
+
     return (
         <div>
             <h1 className='text-center text-blue-200 font-bold text-3xl'>Usestate components</h1>
@@ -28,11 +30,7 @@ function Usestate() {
             <div  className='flex gap-3.5 justify-center mt-3'>
                 <button onClick={()=>{setcount(count+1)}} className='bg-amber-300 rounded-2xl px-[20px] py-[8px]'>increase</button>
                 <button onClick={decrease} className='bg-amber-300 rounded-2xl px-[20px] py-[8px]'>decrease</button>
-            </div>
-
-
-
-            
+            </div>            
             <div className='mt-5'>
                 <h1 className='text-center'>String</h1>
             <h1 className='text-center text-3xl font-bold text-red-600' >{check}</h1>
