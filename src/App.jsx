@@ -9,6 +9,8 @@ import StateProp from './pages/StateProp'
 import NotFound from './pages/Notfound'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
+import UseEfect from './pages/MyUseEfect'
+import MyUseEfect from './pages/MyUseEfect'
 
 
 function WithoutNavbar() {
@@ -43,10 +45,12 @@ function App() {
           <Route element={<WithNavbar />}>
             <Route path='/' element={<Home />} />
             <Route path='/state_prop' element={<StateProp />} />
+            <Route path='/useeffect' element = {<MyUseEfect/>}/>
           </Route>
 
           <Route element={<WithoutNavbar />}>
             <Route path='/login' element={<Login />} />
+            <Route path='*' element={<NotFound/>}/>
           </Route>
 
 

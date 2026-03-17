@@ -13,7 +13,7 @@ function Navebar() {
         <div className='flex gap-[30px]'>
             <Link to={'/'}>Home</Link>
             <Link to={'/state_prop'}>Stat and prop</Link>
-            <Link>Service</Link>
+            <Link to={'/useeffect'}>UseEffect</Link>
             <Link>Contact us</Link>
         </div>
 

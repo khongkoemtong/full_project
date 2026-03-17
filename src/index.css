@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+
+
+.kh{
+     font-family: "Noto Serif Khmer";
+
+}
+
+.en{
+    font-family: "Iosevka Charon Mono";
+}
