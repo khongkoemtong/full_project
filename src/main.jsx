@@ -8,6 +8,6 @@ import Provide from './usecontext/Provide.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Provide/>
+    <App/>
   </StrictMode>,
 )
