@@ -6,12 +6,25 @@ import Rechat from './Rechat'
 import { Mycontext } from '../usecontext/Createcontext'
 import { products } from '../data/products'
 import { users } from '../data/users'
+import { useEffect } from 'react'
+import { useState } from 'react'
 function Home() {
+  const [count , setcount]= useState(0)
 
+  const useData = ()=>{
+       useEffect(()=>{
+        console.log("hello  world ")
+       })
+  }
+
+  
+
+  useData()
 
   return (
     <div>
 
+      <button onClick={()=>setcount(count+1)}>count {count}</button>
 
       <div className='grid grid-cols-5 gap-3.5'>
         {

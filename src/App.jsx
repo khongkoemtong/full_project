@@ -11,6 +11,7 @@ import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import UseEfect from './pages/MyUseEfect'
 import MyUseEfect from './pages/MyUseEfect'
+import Json from './pages/Json'
 
 
 function WithoutNavbar() {
@@ -46,6 +47,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/state_prop' element={<StateProp />} />
             <Route path='/useeffect' element = {<MyUseEfect/>}/>
+            <Route path='/json' element={<Json/>}/>
           </Route>
 
           <Route element={<WithoutNavbar />}>
