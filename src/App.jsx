@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom'
 import Navebar from './components/Navebar'
 import Home from './pages/Home'
@@ -12,6 +12,7 @@ import Dashboard from './pages/Dashboard'
 import UseEfect from './pages/MyUseEfect'
 import MyUseEfect from './pages/MyUseEfect'
 import Json from './pages/Json'
+import FetchApi from './pages/FetchApi'
 
 
 function WithoutNavbar() {
@@ -48,6 +49,7 @@ function App() {
             <Route path='/state_prop' element={<StateProp />} />
             <Route path='/useeffect' element = {<MyUseEfect/>}/>
             <Route path='/json' element={<Json/>}/>
+            <Route path='/fetch' element={<FetchApi/>}/>
           </Route>
 
           <Route element={<WithoutNavbar />}>
