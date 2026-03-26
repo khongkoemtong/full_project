@@ -18,7 +18,7 @@ import Cart from './pages/Cart'
 
 
 function WithoutNavbar() {
-  
+
   return (
     <div>
       <Outlet />
@@ -31,7 +31,7 @@ function WithNavbar() {
       <Navebar />
       <Outlet />
 
-  
+
     </div>
   )
 
@@ -40,11 +40,28 @@ function WithNavbar() {
 
 function App() {
 
-  const [cart , setcart] = useState([])
+  const [cart, setcart] = useState([])
 
 
-  const myaddtocart  = (movie)=>{
-    setcart([...cart,movie])
+  const myaddtocart = (movie) => {
+    const exist = cart.find(item => item.id === movie.id)
+
+
+     if (exist) {
+      // increase quantity
+      const updatedCart = cart.map(item =>
+        item.id === movie.id
+          ? { ...item, qty: item.qty + 1 }
+          : item
+      );
+      setcart(updatedCart);
+    } else {
+      // add new movie with qty = 1
+      setcart([...cart, { ...movie, qty: 1 }]);
+    }
+
+
+
   }
 
   return (
@@ -57,19 +74,19 @@ function App() {
           <Route element={<WithNavbar />}>
             <Route path='/' element={<Home />} />
             <Route path='/state_prop' element={<StateProp />} />
-            <Route path='/useeffect' element = {<MyUseEfect/>}/>
-            <Route path='/json' element={<Json/>}/>
-            <Route path='/fetch' element={<FetchApi addTocard={myaddtocart}/>}/>
-            <Route path='/cart' element ={<Cart Mycart={cart}/>}/>
+            <Route path='/useeffect' element={<MyUseEfect />} />
+            <Route path='/json' element={<Json />} />
+            <Route path='/fetch' element={<FetchApi addTocard={myaddtocart} />} />
+            <Route path='/cart' element={<Cart Mycart={cart} />} />
           </Route>
 
           <Route element={<WithoutNavbar />}>
             <Route path='/login' element={<Login />} />
-            <Route path='*' element={<NotFound/>}/>
+            <Route path='*' element={<NotFound />} />
           </Route>
 
 
-          <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/dashboard' element={<Dashboard />} />
 
         </Routes>
       </BrowserRouter>

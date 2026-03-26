@@ -2,7 +2,7 @@ import React from 'react'
 
 function Cart({ Mycart }) {
     return (
-        <div>
+        <div className='grid grid-cols-4'>
 
             {
                 Mycart.map(cart => (
@@ -12,7 +12,7 @@ function Cart({ Mycart }) {
                             <img src={`https://image.tmdb.org/t/p/w500${cart.backdrop_path}`} class="w-full h-full object-cover rounded-lg" />
                         </div>
                         <div class="p-4 text-center">
-                            <h3 class="text-xl font-bold">{cart.name}</h3>
+                            <h3 class="text-xl font-bold">{cart.name}  ({cart.qty})</h3>
                             <p class="mt-3 text-sm text-slate-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
                                 arcu,
                                 at fermentum dui. Maecenas</p>
