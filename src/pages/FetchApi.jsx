@@ -2,70 +2,30 @@ import React, { useEffect, useState } from 'react'
 import Usestate from '../components/Usestate'
 
 
-function FetchApi() {
+function FetchApi({ addTocard }) {
     const [data, setdata] = useState([])
-    const [card ,setcard] = useState([])
+
 
 
     useEffect(() => {
         const fetchApi = async () => {
             const api = await fetch('https://api.themoviedb.org/3/discover/tv?api_key=d8d339a3367eef52270221ac27edf651')
             const res = await api.json()
-
             setdata(res.results)
-
         }
 
         fetchApi()
     }, [])
 
 
-    const addTocard = (movie)=>{
-        setcard([...card,movie])
-    }
-
-    console.log(card)
-
-  
-
     return (
         <div>
-
-
-            <div className='w-full bg-amber-400'>
-                My cart
-
-                {
-                    card.map(mycart =>(
-                        <div
-      class="bg-white shadow-sm border border-gray-200 p-2 w-full max-w-sm rounded-lg overflow-hidden mx-auto mt-4">
-      <div class="aspect-[3/2]">
-       <img src={`https://image.tmdb.org/t/p/w500${mycart.backdrop_path}`}  class="w-full aspect-[7/7] object-contain rounded-md" />
-      </div>
-      <div class="p-4 text-center">
-        <h3 class="text-xl font-bold">{mycart.name}</h3>
-        <p class="mt-3 text-sm text-slate-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-          arcu,
-          at fermentum dui. Maecenas</p>
-        <button type="button"
-          class="mt-6 px-4 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-medium border-none outline-none bg-blue-600 hover:bg-blue-700 cursor-pointer">View</button>
-      </div>
-    </div>
-
-                    ))
-                }
-
-            </div>
-
-
-           
-
             {
                 data.map(movie => (
                     <div>
                         <div class="grid md:grid-cols-2 items-center gap-12 max-w-5xl max-md:max-w-md mx-auto p-4">
                             <div class="bg-gray-50">
-                                <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}  class="w-full aspect-[7/7] object-contain rounded-md" />
+                                <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} class="w-full aspect-[7/7] object-contain rounded-md" />
                             </div>
 
                             <div>
@@ -101,13 +61,21 @@ function FetchApi() {
                                                 data-original="#0077b5" />
                                         </svg>
                                     </a>
-                                    <button onClick={()=>{addTocard(movie)}} className='px-[20px] py-[8px] bg-blue-400'>Add to card</button>
+                                    <button
+                                        onClick={() => {
+                                            console.log("clicked", movie)
+                                            addTocard(movie)
+                                        }}
+                                        className='px-[20px] py-[8px] bg-blue-400'
+                                    >
+                                        Add to cart
+                                    </button>
 
                                 </div>
                             </div>
                         </div>
 
-                        
+
 
                     </div>
                 ))

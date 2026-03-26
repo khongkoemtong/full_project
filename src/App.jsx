@@ -13,10 +13,12 @@ import UseEfect from './pages/MyUseEfect'
 import MyUseEfect from './pages/MyUseEfect'
 import Json from './pages/Json'
 import FetchApi from './pages/FetchApi'
+import Card from './components/Card'
+import Cart from './pages/Cart'
 
 
 function WithoutNavbar() {
-
+  
   return (
     <div>
       <Outlet />
@@ -29,7 +31,7 @@ function WithNavbar() {
       <Navebar />
       <Outlet />
 
-
+  
     </div>
   )
 
@@ -37,6 +39,14 @@ function WithNavbar() {
 
 
 function App() {
+
+  const [cart , setcart] = useState([])
+
+
+  const myaddtocart  = (movie)=>{
+    setcart([...cart,movie])
+  }
+
   return (
     <>
 
@@ -49,7 +59,8 @@ function App() {
             <Route path='/state_prop' element={<StateProp />} />
             <Route path='/useeffect' element = {<MyUseEfect/>}/>
             <Route path='/json' element={<Json/>}/>
-            <Route path='/fetch' element={<FetchApi/>}/>
+            <Route path='/fetch' element={<FetchApi addTocard={myaddtocart}/>}/>
+            <Route path='/cart' element ={<Cart Mycart={cart}/>}/>
           </Route>
 
           <Route element={<WithoutNavbar />}>

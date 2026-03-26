@@ -15,6 +15,8 @@ function Navebar() {
             <Link to={'/state_prop'}>Stat and prop</Link>
             <Link to={'/useeffect'}>UseEffect</Link>
             <Link>Contact us</Link>
+            <Link to={'/fetch'}>FetchApi</Link>
+            <Link to={'/cart'}>Cart</Link>
         </div>
 
         <div className='flex gap-[30px]'>
