@@ -15,6 +15,7 @@ import Json from './pages/Json'
 import FetchApi from './pages/FetchApi'
 import Card from './components/Card'
 import Cart from './pages/Cart'
+import Axios from './pages/Axios'
 
 
 function WithoutNavbar() {
@@ -45,8 +46,6 @@ function App() {
 
   const myaddtocart = (movie) => {
     const exist = cart.find(item => item.id === movie.id)
-
-
      if (exist) {
       // increase quantity
       const updatedCart = cart.map(item =>
@@ -78,6 +77,7 @@ function App() {
             <Route path='/json' element={<Json />} />
             <Route path='/fetch' element={<FetchApi addTocard={myaddtocart} />} />
             <Route path='/cart' element={<Cart Mycart={cart} />} />
+            <Route path='/axios' element={<Axios/>}/>
           </Route>
 
           <Route element={<WithoutNavbar />}>
