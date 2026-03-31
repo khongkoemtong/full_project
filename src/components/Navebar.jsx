@@ -17,6 +17,7 @@ function Navebar() {
             <Link>Contact us</Link>
             <Link to={'/fetch'}>FetchApi</Link>
             <Link to={'/cart'}>Cart</Link>
+            <Link to={'/axios'}>Axios</Link>
         </div>
 
         <div className='flex gap-[30px]'>

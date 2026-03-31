@@ -9,6 +9,6 @@ import Axios from './pages/Axios.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Axios/>
+    <App/>
   </StrictMode>,
 )

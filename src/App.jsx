@@ -16,6 +16,7 @@ import FetchApi from './pages/FetchApi'
 import Card from './components/Card'
 import Cart from './pages/Cart'
 import Axios from './pages/Axios'
+import Detailpage from './pages/Detailpage'
 
 
 function WithoutNavbar() {
@@ -77,7 +78,11 @@ function App() {
             <Route path='/json' element={<Json />} />
             <Route path='/fetch' element={<FetchApi addTocard={myaddtocart} />} />
             <Route path='/cart' element={<Cart Mycart={cart} />} />
+
             <Route path='/axios' element={<Axios/>}/>
+            <Route path='/axios/:id' element={<Detailpage/>}/>
+
+            
           </Route>
 
           <Route element={<WithoutNavbar />}>
